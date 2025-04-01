@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: your-name
+      changes:
+        - sql:
+            sql: |
+              ALTER TABLE card ADD COLUMN example_of_usage TEXT;

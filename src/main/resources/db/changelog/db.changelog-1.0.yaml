@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: your-name
+      changes:
+        - sql:
+            sql: |
+              CREATE TABLE card (
+                id UUID PRIMARY KEY,
+                question TEXT NOT NULL UNIQUE,
+                show_count INT DEFAULT 0,
+                correct_answer_count INT DEFAULT 0,
+                last_shown_date_time TIMESTAMP WITHOUT TIME ZONE,
+                created_at TIMESTAMP WITHOUT TIME ZONE,
+                card_type VARCHAR(255) NOT NULL,
+                card_set_id UUID
+              );
+              
+              CREATE TABLE answer (
+                id UUID PRIMARY KEY,
+                answer_text TEXT NOT NULL,
+                card_id UUID NOT NULL,
+                FOREIGN KEY (card_id) REFERENCES card(id) 
+              );
