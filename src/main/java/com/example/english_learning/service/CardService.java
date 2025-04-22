@@ -111,12 +111,12 @@ public class CardService {
         return cardRepo.countActualCard(maxCorrectAnswerForShow );
     }
 
-//    @PostConstruct
+    @PostConstruct
     public void parsWords() throws IOException {
         var content = new String(
                 Files.readAllBytes(
                         Paths.get(
-                                "/Users/sheykinsemyon/IdeaProjects/english_lerning/src/main/resources/words.txt"
+                                "src/main/resources/words.txt"
                         )
                 )
         );
